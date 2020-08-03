@@ -303,7 +303,7 @@ class HUOBISPOT:
         return list
 
     def get_position(self):
-        """获取当前交易对的计价货币的可用余额，如当前交易对为etc-usdt, 则获取的是usdt的可用余额"""
+        """获取当前交易对的计价货币的可用余额，如当前交易对为ETC-USDT, 则获取的是USDT的可用余额"""
         receipt = self.__huobi_spot.get_balance_currency(self.__account_id, self.__currency)
         direction = 'long'
         amount = receipt[self.__currency]
