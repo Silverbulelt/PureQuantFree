@@ -1,0 +1,64 @@
+{
+    "STATUS": {
+        "first_run": "true"
+    },
+    "SYNCHRONIZE": {
+        "overprice": {
+            "range": "0.0%"
+        }
+    },
+    "MARKETS_SERVER": {
+        "platform": {
+            "huobi": {
+                "console": "false",
+                "database": "trade",
+                "collection": "hbdata",
+                "channels": [
+                ["market.BTC_NW.depth.step6"], ["market.BTC_CQ.kline.1min"]
+                ]
+            }
+        }
+    },
+    "POSITION_SERVER": {
+        "platform": {
+            "okex": {
+                    "futures_usd": "false",
+                    "futures_usdt": "true",
+                    "delivery_date": "201225",
+                    "swap_usd": "false",
+                    "swap_usdt": "false",
+                    "spot": "false",
+                    "margin": "false"
+            }
+        }
+    },
+    "PUSH": {
+        "sendmail": "false",
+        "dingtalk": "true",
+        "twilio": "false"
+    },
+    "LOG": {
+        "level": "debug",
+        "handler": "file"
+    },
+    "EXCHANGE": {
+        "access_key": "f6c10809-dcb2-429eb3",
+        "secret_key": "139CBD6F09F3D0EF5A14",
+        "passphrase": "123456"
+    },
+    "DINGTALK": {
+        "ding_talk_api": "https://oapi.dingtalk.com/robot/send?access_token=d3a36879bd79d74b453"
+    },
+    "TWILIO": {
+        "accountSID" : "AC97a11fcc5ed61ad140f",
+        "authToken" : "3616b6ced8e250fa4aa559",
+        "myNumber" : "+8615256788540",
+        "twilio_Number" : "+12345676774"
+    },
+    "SENDMAIL": {
+        "from_addr" : "123456789@qq.com",
+        "password" : "xxeqkwtrwcjgj",
+        "to_addr" : "abc@icloud.com",
+        "smtp_server" : "smtp.qq.com"
+    }
+}
