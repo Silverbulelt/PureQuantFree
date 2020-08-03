@@ -161,7 +161,7 @@ class HUOBISPOT:
         self.__secret_key = secret_key
         self.__instrument_id = (instrument_id.split('-')[0] + instrument_id.split('-')[1]).lower()
         self.__huobi_spot = huobispot.HuobiSVC(self.__access_key, self.__secret_key)
-        self.__currency = (instrument_id.split('-')[1]).lower()
+        self.__currency = (instrument_id.split('-')[0]).lower()
         self.__account_id = self.__huobi_spot.get_accounts()['data'][0]['id']
         self.__symbol = (instrument_id).lower()  # 获取合约面值的函数中所用到的交易对未处理前的格式
 
@@ -303,7 +303,7 @@ class HUOBISPOT:
         return list
 
     def get_position(self):
-        """获取当前交易对的计价货币的可用余额，如当前交易对为ETC-USDT, 则获取的是USDT的可用余额"""
+        """获取当前交易对的计价货币的可用余额，如当前交易对为ETC-USDT, 则获取的是ETC的可用余额"""
         receipt = self.__huobi_spot.get_balance_currency(self.__account_id, self.__currency)
         direction = 'long'
         amount = receipt[self.__currency]

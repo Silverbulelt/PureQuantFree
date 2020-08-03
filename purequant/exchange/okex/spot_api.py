@@ -8,7 +8,7 @@ class SpotAPI(Client):
         Client.__init__(self, api_key, api_secret_key, passphrase, use_server_time, first)
 
     def get_position(self, instrument_id):
-        currency = instrument_id.split('-')[1]
+        currency = instrument_id.split('-')[0]
         receipt = self.get_coin_account_info(currency=currency)
         direction = 'long'
         amount = receipt['balance']

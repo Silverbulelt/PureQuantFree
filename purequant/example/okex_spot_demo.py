@@ -16,10 +16,27 @@ market = MARKET(exchange, instrument_id, time_frame)
 indicators = INDICATORS(exchange, instrument_id, time_frame)
 position = POSITION(exchange, instrument_id, time_frame)
 
-# info = exchange.buy(7.35, 0.02)           # 以7.35的价格买入0.02个ETC，并打印下单信息
-# info = market.last()                      # 打印ETC的最新成交价
+# 下单交易，买入和卖出
+# info = exchange.buy(7.35, 0.02)           # 以7.35的价格买入0.02个ETC
+# info = exchange.sell(7.35, 0.01)            # 卖出0.02个ETC
+
+# 获取行情信息
 # info = exchange.get_kline(time_frame)      # 获取k线数据
-# info = indicators.MA(30)[-1]               # 计算30日收盘平均价指标
-# info = position.amount()                  # 获取ETC-USDT交易对的USDT可用余额
+# info = market.last()                      # 获取ETC-USDT的最新成交价
+# info = market.open(-1)                      # 获取ETC-USDT的当日开盘价
+# info = market.high(-1)                      # 获取ETC-USDT的当日最高价
+# info = market.low(-1)                      # 获取ETC-USDT的当日最低价
+# info = market.close(-1)                      # 获取ETC-USDT的当日收盘价
+
+# 持仓信息
+# info = position.amount()                  # 获取ETC-USDT交易对的ETC可用余额
+
+# 计算指标
+# info = indicators.MA(30)[-1]               # 计算当根k线上的30日收盘平均价指标
+# info = indicators.CurrentBar()           # 计算获取的k线长度
+# info = indicators.EMA(30)[-1]           # 计算当根k线上的30日EMA
+# info = indicators.VOLUME()[-1]              # 计算当根k线上的成交量
+# info = indicators.HIGHEST(30)[-1]           # 30日周期内最高价
+# info = indicators.LOWEST(30)[-1]            # 30日周期内最低价
 
 # print(info)   # 打印信息
